@@ -43,8 +43,8 @@ export default function Home() {
       </div>
       <div className="container map-wrap">
         <div className="map-heading"><p className="section-eyebrow">Directions</p><h2>Find Us in Pandulagama</h2></div>
-        <iframe className="map-frame" title="Google Map directions to Mangala Vihara International Buddhist Center" src="https://www.google.com/maps?q=No.%2022%2C%20Pandulagama%2C%20Anuradhapura%2C%20Sri%20Lanka&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen />
-        <a className="text-link map-link" href="https://www.google.com/maps/dir/?api=1&destination=No.%2022%2C%20Pandulagama%2C%20Anuradhapura%2C%20Sri%20Lanka" target="_blank" rel="noreferrer">Open directions in Google Maps →</a>
+        <iframe className="map-frame" title="Google Map directions to Mangala Vihara International Buddhist Center" src="https://www.google.com/maps?q=Mangala%20Vihara%20Buddhist%20Temple%2C%20Anuradhapura%2C%20Sri%20Lanka&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen />
+        <a className="text-link map-link" href="https://maps.app.goo.gl/2AYcsZbY7dm67t1s5" target="_blank" rel="noreferrer">Open directions in Google Maps →</a>
       </div></section>
     </main><Footer />
   </>;
