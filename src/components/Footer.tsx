@@ -1,0 +1,2 @@
+import site from "@/src/data/site.json";
+export default function Footer(){const tel=site.telephone.replace(/\s/g,"");return <footer className="site-footer"><div className="container footer-grid"><div><h2>{site.name}</h2><p>{site.tagline}</p></div><div><h3>Visit Us</h3><p>{site.address}</p><p><a href={`tel:${tel}`}>{site.telephone}</a></p></div></div><div className="container footer-bottom"><p>© {new Date().getFullYear()} {site.name}</p></div></footer>}
