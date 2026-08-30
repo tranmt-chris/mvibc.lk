@@ -1,0 +1,75 @@
+media:
+  input: public/images
+  output: /images
+  rename: safe
+  categories: [image]
+
+content:
+  - name: site
+    label: Centre details
+    type: file
+    path: src/data/site.json
+    format: json
+    fields:
+      - name: name
+        label: Full name
+        type: string
+        required: true
+      - name: shortName
+        label: Short name
+        type: string
+        required: true
+      - name: address
+        label: Address
+        type: text
+        required: true
+      - name: telephone
+        label: Telephone
+        type: string
+        required: true
+      - name: tagline
+        label: Tagline
+        type: text
+        required: true
+
+  - name: homepage
+    label: Homepage
+    type: file
+    path: src/data/home.json
+    format: json
+    fields:
+      - name: eyebrow
+        label: Location label
+        type: string
+        required: true
+      - name: heroTitle
+        label: Main heading
+        type: string
+        required: true
+      - name: intro
+        label: Introduction
+        type: text
+        required: true
+      - name: aboutTitle
+        label: About heading
+        type: string
+        required: true
+      - name: aboutText
+        label: About text
+        type: text
+        required: true
+      - name: vision
+        label: Vision
+        type: text
+        required: true
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      create: "Create {path} via PageCMS"
+      update: "Update {path} via PageCMS"
+      delete: "Delete {path} via PageCMS"
+      rename: "Rename {oldPath} to {newPath} via PageCMS"
