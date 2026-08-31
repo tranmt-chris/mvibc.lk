@@ -37,6 +37,8 @@ jobs:
 
       - name: Build static website
         run: pnpm run build
+        env:
+          DEPLOY_TARGET: github-pages
 
       - name: Arrange assets for the repository subpath
         run: |
@@ -61,3 +63,37 @@ jobs:
       - name: Deploy website
         id: deployment
         uses: actions/deploy-pages@v4
+
+  build-cpanel-package:
+    name: Build cPanel package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build root-domain static website
+        run: pnpm run build
+        env:
+          DEPLOY_TARGET: cpanel
+
+      - name: Upload cPanel-ready package
+        uses: actions/upload-artifact@v4
+        with:
+          name: mvibc-cpanel-static
+          path: dist/client
+          if-no-files-found: error
+          retention-days: 30

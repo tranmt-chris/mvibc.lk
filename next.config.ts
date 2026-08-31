@@ -1,11 +1,13 @@
 import type { NextConfig } from 'next';
 
-const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
+const deployTarget = process.env.DEPLOY_TARGET;
+const isGitHubPages = deployTarget === 'github-pages';
+const isStaticExport = isGitHubPages || deployTarget === 'cpanel';
 
 const nextConfig: NextConfig = {
-  output: isGitHubPages ? 'export' : undefined,
+  output: isStaticExport ? 'export' : undefined,
   assetPrefix: isGitHubPages ? '/mvibc.lk/' : undefined,
-  trailingSlash: isGitHubPages,
+  trailingSlash: isStaticExport,
 };
 
 export default nextConfig;
