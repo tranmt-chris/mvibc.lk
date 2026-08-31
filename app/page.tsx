@@ -3,6 +3,8 @@ import site from "@/src/data/site.json";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
 
+export const dynamic = "force-static";
+
 const purposes = [
   { symbol: "☸", title: "Supporting the Sangha", text: "Providing accommodation, facilities and practical support for Buddhist monks visiting Anuradhapura." },
   { symbol: "♡", title: "Serving the Community", text: "Extending compassionate and humanitarian assistance to people within the surrounding community." },
