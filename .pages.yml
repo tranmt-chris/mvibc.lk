@@ -19,6 +19,10 @@ content:
         label: Short name
         type: string
         required: true
+      - name: logo
+        label: Logo
+        type: image
+        description: Upload or select the logo displayed in the website header. Leave empty to use the Dharma wheel.
       - name: address
         label: Address
         type: text
