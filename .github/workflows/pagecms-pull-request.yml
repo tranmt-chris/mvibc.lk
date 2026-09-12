@@ -1,0 +1,34 @@
+name: Open PageCMS pull request
+
+on:
+  push:
+    branches: [pagecms]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  open-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open or update pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ahead_by="$(gh api "repos/${GITHUB_REPOSITORY}/compare/main...pagecms" --jq '.ahead_by')"
+          if [ "$ahead_by" = "0" ]; then
+            echo "The PageCMS branch has no changes to review yet."
+            exit 0
+          fi
+
+          existing_pr="$(gh pr list --head pagecms --base main --state open --json number --jq '.[0].number // empty')"
+          if [ -n "$existing_pr" ]; then
+            echo "PageCMS pull request #$existing_pr already contains the latest commits."
+          else
+            gh pr create \
+              --head pagecms \
+              --base main \
+              --title "Review PageCMS website changes" \
+              --body "Content changes saved through PageCMS. Review the Files changed tab, then merge this pull request to publish them to the live website."
+          fi
