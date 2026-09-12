@@ -1,1 +1,8 @@
-{"name":"Mangala Vihara International Buddhist Center","shortName":"MVIBC","logo":"","address":"No. 22, Pandulagama, Anuradhapura, Sri Lanka","telephone":"+94 25 223 0144","tagline":"Serving the Sangha, Supporting the Community, and Preserving the Dhamma."}
+{
+  "name": "Mangala Vihara International Buddhist Center",
+  "shortName": "MVIBC",
+  "logo": "/images/mvbic-logo.jpg",
+  "address": "No. 22, Pandulagama, Anuradhapura, Sri Lanka",
+  "telephone": "+94 25 223 0144",
+  "tagline": "Serving the Sangha, Supporting the Community, and Preserving the Dhamma."
+}
